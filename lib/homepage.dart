@@ -41,20 +41,40 @@ class HomePage extends StatelessWidget {
               accountName: Text("Angel Perez 1086"),
               accountEmail: Text("a.22308051281086@cbtis128.edu.mx"),
               currentAccountPicture: GestureDetector(
-                child: CircleAvatar(
-                  child: Text(
-                    "AP",
-                    style: TextStyle(
-                        color: Colors.pink,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  backgroundColor: Colors.white,
+            child: CircleAvatar(
+              radius: 120,
+              backgroundImage: NetworkImage(
+                  'https://raw.githubusercontent.com/Angel-Perez-1086/imagenes_github/refs/heads/main/icon.jpg'),
                 ),
               ),
-            )
+            ),
+            InkWell(
+              onTap: (){},
+              child: ListTile(
+                onTap: (){Navigator.popAndPushNamed(context, "/home");},
+                leading: Icon(Icons.home, color: Colors.pink),
+                title: Text("Home Page"),
+              ),
+            ),
+            InkWell(
+              onTap: null,
+              child: ListTile(
+                onTap: (){Navigator.popAndPushNamed(context, "/empleado");},
+                leading: Icon(Icons.person, color: Colors.black),
+                title: Text("empleados"),
+              ),
+            ),
+                        InkWell(
+              onTap: null,
+              child: ListTile(
+                onTap: (){Navigator.popAndPushNamed(context, "/clientes");},
+                leading: Icon(Icons.person, color: Colors.black),
+                title: Text("clientes"),
+              ),
+            ),
           ],
         ),
+        
       ),
     );
   }
